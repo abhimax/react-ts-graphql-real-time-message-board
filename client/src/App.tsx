@@ -4,8 +4,8 @@ import Messages from './Messages';
 
 const App: React.FC = () => (
   <ApolloProvider client={client}>
-    <div>
-      <h1>GraphQL Subscriptions with React</h1>
+    <div className='app-wrapper'>
+      <h2>GraphQL Subscriptions with React</h2>
       <Messages />
     </div>
   </ApolloProvider>
