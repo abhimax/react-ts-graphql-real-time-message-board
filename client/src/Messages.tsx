@@ -152,13 +152,14 @@ const Messages: React.FC = () => {
 
   return (
     <div className={styles.container}>
-    <h1 className={styles.header}>GraphQL Subscriptions with React</h1>
     <ul className={styles.messageList}>
       {data.messages.map((message: any) => (
         <li key={message.id}>
           {message.content}
-          <button onClick={() => handleUpdateMessage(message.id)}>Update</button>
-          <button onClick={() => handleDeleteMessage(message.id)}>Delete</button>
+          <div className='button-wrapper'>
+            <button onClick={() => handleUpdateMessage(message.id)}>Update</button>
+            <button onClick={() => handleDeleteMessage(message.id)}>Delete</button>
+          </div>
         </li>
       ))}
     </ul>
