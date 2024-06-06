@@ -135,11 +135,17 @@ const Messages: React.FC = () => {
     addMessage({ variables: { content } });
     setContent('');
   };
-
+  interface Message {
+    id: string;
+    content: string;
+}
   const handleUpdateMessage = (id: string) => {
-    const newContent = prompt('Enter new content:', '');
-    if (newContent) {
-      updateMessage({ variables: { id, content: newContent } });
+    const messageObj = data.messages.find((msg: Message) => msg.id === id);
+    if(messageObj){
+      const newContent = prompt('Enter new content:', `${messageObj.content}`);
+        if (newContent) {
+          updateMessage({ variables: { id, content: newContent } });
+        }
     }
   };
 
