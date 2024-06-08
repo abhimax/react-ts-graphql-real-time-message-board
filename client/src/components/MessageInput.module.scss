@@ -1,0 +1,43 @@
+  .inputGroup {
+    display: flex;
+    margin-top: 20px;
+  
+    input {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      margin-right: 10px;
+    }
+  
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 3px;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+  
+      &:hover {
+        background-color: #0056b3;
+      }
+    }
+    .error-text{
+      background-color: #dc3545;
+      color: #ffffff;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      display: flex;
+      margin-top: 10px;
+      justify-content: space-between;
+      width: 100%;
+      align-items: center;
+      .close{
+        background-color: #ffffff;
+        color: #dc3545;
+        border: none;
+        border-radius: 5px;
+      }
+    }
+  }
