@@ -1,4 +1,4 @@
-import { ApolloClient, InMemoryCache, ApolloProvider, split, HttpLink } from '@apollo/client';
+import { ApolloClient, InMemoryCache, split, HttpLink } from '@apollo/client';
 import { WebSocketLink } from '@apollo/client/link/ws';
 import { getMainDefinition } from '@apollo/client/utilities';
 
@@ -30,4 +30,4 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-export { client, ApolloProvider };
+export { client };
