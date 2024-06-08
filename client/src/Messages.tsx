@@ -66,6 +66,7 @@ const MESSAGE_DELETED = gql`
 
 const Messages: React.FC = () => {
   const [content, setContent] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
   const { data, loading, error } = useQuery(GET_MESSAGES);
 
   const [addMessage] = useMutation(ADD_MESSAGE);
@@ -132,8 +133,13 @@ const Messages: React.FC = () => {
   });
 
   const handleAddMessage = () => {
+    if(!content.trim()){
+      setErrorMessage('Message can not be empry, Please Enter your Message...');
+      return;
+    }
     addMessage({ variables: { content } });
     setContent('');
+    setErrorMessage('');
   };
   interface Message {
     id: string;
@@ -177,6 +183,7 @@ const Messages: React.FC = () => {
       />
       <button onClick={handleAddMessage}>Add Message</button>
     </div>
+    {errorMessage && <span className={styles['error-text']}>{errorMessage}<button className={styles.close} onClick={() => setErrorMessage('')}>Close</button></span>}
   </div>
   );
 };
