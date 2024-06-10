@@ -3,29 +3,29 @@
     padding: 10px 20px;
     border: none;
     border-radius: 3px;
-    background-color: #007bff;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--color-white);
     cursor: pointer;
 
     &:hover {
-      background-color: #0056b3;
+      background-color: var(--color-error-dark);
     }
     &.next-space{
         margin-right: 10px;
     }
     &.type1 {
-        background-color: #28a745;
+        background-color: var(--color-success);
   
         &:hover {
-          background-color: #218838;
+          background-color: var(--color-success-dark)
         }
       }
   
     &.type2 {
-        background-color: #dc3545;
+        background-color: var(--color-error);
   
         &:hover {
-          background-color: #c82333;
+            background-color: var(--color-error-dark);
         }
       }
     &.small{
