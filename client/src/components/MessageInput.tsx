@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './MessageInput.module.scss';
+import Button from './Button/Button';
 
 const MessageInput: React.FC<{
   content: string,
@@ -21,7 +22,7 @@ const MessageInput: React.FC<{
         value={content}
         onChange={e => setContent(e.target.value)}
       />
-      <button onClick={handleSubmit}>Add Message</button>
+      <Button label='Add Message' onClick={handleSubmit}/>
       </div>
       <div className={styles.inputGroup}>
       {errorMessage && (
