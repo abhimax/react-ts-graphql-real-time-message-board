@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from './MessageEditeModal.module.scss';
+import Button from '../Button/Button';
 
 interface ModalProps {
   isOpen: boolean;
@@ -35,8 +36,8 @@ const MessageEditeModal: React.FC<ModalProps> = ({ isOpen, content, onClose, onS
         <h2>Update Message</h2>
         <textarea value={newContent} onChange={(e) => setNewContent(e.target.value)} />
         <div className={styles.actions}>
-          <button onClick={onClose}>Cancel</button>
-          <button onClick={handleSubmit}>Update</button>
+            <Button label='Cancel' skin="type2" onClick={onClose}/>
+            <Button label='Update' skin="type1" onClick={handleSubmit}/>
         </div>
       </div>
     </div>
