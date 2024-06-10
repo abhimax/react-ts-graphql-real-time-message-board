@@ -13,34 +13,5 @@
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       color: #ffffff;
     }
-  
-    button {
-      margin-left: 10px;
-      padding: 5px 10px;
-      border: none;
-      border-radius: 3px;
-      background-color: #007bff;
-      color: white;
-      cursor: pointer;
-  
-      &:hover {
-        background-color: #0056b3;
-      }
-  
-      &:first-of-type {
-        background-color: #28a745;
-  
-        &:hover {
-          background-color: #218838;
-        }
-      }
-  
-      &:last-of-type {
-        background-color: #dc3545;
-  
-        &:hover {
-          background-color: #c82333;
-        }
-      }
-    }
+
   }
