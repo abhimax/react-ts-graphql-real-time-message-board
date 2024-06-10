@@ -12,12 +12,16 @@
   }
   
   .modal {
-    background: #444444;
+    background: var(--color-bg);
     padding: 20px;
     border-radius: 5px;
     max-width: 500px;
     width: 100%;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    h2{
+      text-align: left !important;
+      font-weight: normal;
+    }
   }
   
   .actions {
