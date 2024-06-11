@@ -5,14 +5,23 @@
     border-radius: 3px;
     background-color: var(--primary-color);
     color: var(--color-white);
-    cursor: pointer;
 
     &:hover {
       background-color: var(--color-error-dark);
+      cursor: pointer;
     }
     &.next-space{
         margin-right: 10px;
     }
+
+    &.primary {
+      background-color: var(--color-primary);
+
+      &:hover {
+        background-color: var(--color-primary-dark)
+      }
+    }
+
     &.type1 {
         background-color: var(--color-success);
   

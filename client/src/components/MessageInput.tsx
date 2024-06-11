@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './MessageInput.module.scss';
 import Button from './Button/Button';
+import Alert from './Alert/Alert';
 
 const MessageInput: React.FC<{
   content: string,
@@ -22,17 +23,14 @@ const MessageInput: React.FC<{
         value={content}
         onChange={e => setContent(e.target.value)}
       />
-      <Button label='Add Message' onClick={handleSubmit}/>
-      </div>
-      <div className={styles.inputGroup}>
+      <Button label='Add Message' onClick={handleSubmit} />
+    </div>
+    <div className={styles.inputGroup}>
       {errorMessage && (
-        <span className={styles['error-text']}>
-          {errorMessage}
-          <button className={styles.close} onClick={() => setErrorMessage('')}>Close</button>
-        </span>
+        <Alert message={errorMessage} onClose={() => setErrorMessage('')} />
       )}
     </div>
-    </>
+  </>
   );
 };
 
