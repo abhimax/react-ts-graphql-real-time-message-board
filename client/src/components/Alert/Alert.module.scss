@@ -1,0 +1,28 @@
+.alert{
+  color: var(--color-white);
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  margin-top: 10px;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  &.error{
+    background-color: var(--color-error);
+  }
+  &.success{
+    background-color: var(--color-success);
+  }
+  &.info{
+    background-color: var(--color-parimary);
+  }
+  .close{
+    background-color: var(--color-white);
+    color: var(--color-error);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+  }
+}
