@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './MessageList.module.scss';
 import { Message } from './Message';
 import Button from './Button/Button';
+import Alert from './Alert/Alert';
 interface MessageListProps {
     data: { messages: Message[] };
     handleUpdate: (id: string) => void;
@@ -9,7 +10,7 @@ interface MessageListProps {
   }
 const MessageList: React.FC<MessageListProps> = ({ handleUpdate, handleDelete, data }) => (
   <ul className={styles.messageList}>
-    {data?.messages.map((message: any) => (
+    { data.messages.length > 0 ?  data?.messages.map((message: any) => (
       <li key={message.id}>
         {message.content}
         <div className='button-wrapper'>
@@ -17,7 +18,7 @@ const MessageList: React.FC<MessageListProps> = ({ handleUpdate, handleDelete, d
             <Button label="Update" onClick={() => handleUpdate(message.id)} skin='type1' size='small'/>
         </div>
       </li>
-    ))}
+    )) : <Alert message='Your Message Board is empry!' skin="info"/>}
   </ul>
 );
 
