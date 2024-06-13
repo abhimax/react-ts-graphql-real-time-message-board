@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from './MessageEditeModal.module.scss';
 import Button from '../Button/Button';
+import Alert from '../Alert/Alert';
 
 interface ModalProps {
   isOpen: boolean;
@@ -27,16 +28,25 @@ const MessageEditeModal: React.FC<ModalProps> = ({ isOpen, content, onClose, onS
     onClose();
   };
 
+  const handleClose = () => {
+    newContent !== content && setNewContent(content)
+    onClose();
+  }
+
+  const handleAlertClose = () => {
+    setModalError('');
+  }
+
   if (!isOpen) return null;
 
   return (
     <div className={styles.backdrop}>
       <div className={styles.modal}>
-        { modalError && <span>{modalError}</span>}
+        { modalError && <Alert message={modalError} onClose={handleAlertClose}/> }
         <h2>Update Message</h2>
         <textarea value={newContent} onChange={(e) => setNewContent(e.target.value)} />
         <div className={styles.actions}>
-            <Button label='Cancel' skin="type2" onClick={onClose}/>
+            <Button label='Cancel' skin="type2" onClick={handleClose}/>
             <Button label='Update' skin="type1" onClick={handleSubmit}/>
         </div>
       </div>

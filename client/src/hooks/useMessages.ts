@@ -82,7 +82,7 @@ export const useMessages = () => {
   });
 
   const handleAddMessage = (content) => {
-    console.log('cintent', content);
+    console.log('content', content);
     if (!content.trim()) {
       setErrorMessage('Message cannot be empty. Please enter your message.');
       return;
