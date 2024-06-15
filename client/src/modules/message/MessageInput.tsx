@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './MessageInput.module.scss';
-import Button from './Button/Button';
-import Alert from './Alert/Alert';
+import Button from '../../components/Button/Button';
+import Alert from '../../components/Alert/Alert';
 
 const MessageInput: React.FC<{
   content: string,

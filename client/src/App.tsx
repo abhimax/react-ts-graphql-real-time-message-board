@@ -1,7 +1,7 @@
 import React from 'react';
 import { client } from './apolloClient';
 import { ApolloProvider } from '@apollo/client';
-import Messages from './components/Messages';
+import Messages from './modules/message/Messages';
 
 const App: React.FC = () => (
   <ApolloProvider client={client}>

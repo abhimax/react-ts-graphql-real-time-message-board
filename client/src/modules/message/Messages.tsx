@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import MessageList from './MessageList';
 import MessageInput from './MessageInput';
-import MessageEditeModal from './modal/MessageEditeModal';
-import { useMessages } from '../hooks/useMessages';
+import MessageEditeModal from '../../components/modal/MessageEditeModal';
+import { useMessages } from '../../hooks/useMessages';
 import styles from './Messages.module.scss';
 
 const Messages: React.FC = () => {
