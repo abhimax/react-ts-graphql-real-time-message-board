@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useQuery, useMutation, useSubscription } from '@apollo/client';
 import { gql } from '@apollo/client';
+import { toast } from 'react-toastify';
 import {
   GET_MESSAGES,
   ADD_MESSAGE,
@@ -17,9 +18,24 @@ export const useMessages = () => {
     fetchPolicy: 'cache-and-network',
   });
 
-  const [addMessage] = useMutation(ADD_MESSAGE);
-  const [updateMessage] = useMutation(UPDATE_MESSAGE);
-  const [deleteMessage] = useMutation(DELETE_MESSAGE);
+  const [addMessage] = useMutation(ADD_MESSAGE, {
+    onCompleted: () => {
+      toast.success('Message added successfully!');
+    },
+  });
+
+  const [updateMessage] = useMutation(UPDATE_MESSAGE, {
+    onCompleted: () => {
+      toast.success('Message updated successfully!');
+    },
+  });
+
+  const [deleteMessage] = useMutation(DELETE_MESSAGE, {
+    onCompleted: () => {
+      toast.success('Message deleted successfully!');
+    },
+  });
+
 
   useSubscription(MESSAGE_ADDED, {
     onData: ({ client, data: subscriptionData }) => {

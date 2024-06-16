@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import MessageList from './MessageList';
 import MessageInput from './MessageInput';
 import MessageEditeModal from '../../components/modal/MessageEditeModal';
 import { useMessages } from '../../hooks/useMessages';
 import styles from './Messages.module.scss';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Messages: React.FC = () => {
   const {
@@ -46,6 +48,7 @@ const Messages: React.FC = () => {
 
   return (
     <div className={styles.container}>
+      <ToastContainer/>
       <MessageList handleUpdate={handleUpdate} handleDelete={handleDeleteMessage} data={data} />
       <MessageInput
         content={content}
